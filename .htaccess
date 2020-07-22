@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteRule ^index\.php$ - [L]
+
+RewriteRule ^([a-z]+)$ index.php?controller=$1&action=index [L,QSA]
+RewriteRule ^([a-z]+)/$ index.php?controller=$1&action=index [L,QSA]
+
+RewriteRule ^([a-z]+)/([a-z]+)$ index.php?controller=$1&action=$2 [L,QSA]
+
+RewriteRule ^([a-z]+)/([a-z]+)/([a-z]+)$ index.php?controller=$1&action=$2&params=$3 [L,QSA]
