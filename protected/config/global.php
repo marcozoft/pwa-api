@@ -11,18 +11,24 @@
 	{
 		$url = "http://".$_SERVER['HTTP_HOST']."/".NOMBRE_SITIO."/";
 		error_reporting(E_ALL);
-	
+		define("ROOT_PATH", ($_SERVER['DOCUMENT_ROOT'].'/'.NOMBRE_SITIO.'/'));
 	}
 	else
 	{
+		/*
 		$url = ($_SERVER['HTTPS'] == 'on' ? 'https' : 'http') . '://';
 		$url .= $_SERVER['SERVER_NAME']."/";
 		error_reporting(0);
+		*/
+		$url = 'http://api.victorhugovallejos.com.ar/';
+		/*
 		$twig_loader = new Twig_Loader_Filesystem('../views');
 		$twig = new Twig_Environment($twig_loader, array('cache' => '../cache/twig',));		
+		*/
+		define("ROOT_PATH", ($_SERVER['DOCUMENT_ROOT'].'/'));
 	}
 
-	define("ROOT_PATH", ($_SERVER['DOCUMENT_ROOT'].'/'.NOMBRE_SITIO.'/'));
+	
 
 	define("PAGINACION_CANTIDAD", 20);
 
