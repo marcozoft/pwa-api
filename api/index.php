@@ -50,6 +50,14 @@ $app->post('/pwa/endpoint/save', function (Request $request, Response $response)
 });
 
 
+$app->get('/pwa/endpoints', function (Request $request, Response $response) {
+    $list = (new EndpointModel())->getAll();
+    
+    $resp = array('success' => true, 'endpoints'=> $list);
+    return $response->withJson($resp);
+});
+
+
 $app->run();
  
 

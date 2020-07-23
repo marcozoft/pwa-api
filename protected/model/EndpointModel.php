@@ -24,5 +24,10 @@ class EndpointModel extends ModelBase{
             "axn" => $aux
         ]);
     }
+
+    public function getAll()
+    {
+        return $this->db->select($this->table, '*');
+    }
 }
 ?>
